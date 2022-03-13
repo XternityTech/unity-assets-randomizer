@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a0d5ab691f4c5a86739f6875bfa8df, type: 3}
+  m_Name: New Robot Scriptable Object
+  m_EditorClassIdentifier: 
+  Robot:
+    ID: 1
+    BaseType: 0
+    Nickname: 
+    Class: 1
+    Subclass: 0
+    Rarity: 0
+    CosmeticsId1: 0
+    CosmeticsId2: 1
+    CosmeticsId3: 0
+    CosmeticsId4: 0
+    DamageRerHit: 1
+    HitPoints: 1
+    HitPerSecond: 0
+    EnergyCost: 0
+    SpecialAttack: 
+    BodyRarity: 0
+    BodyEfficiency: 0
+    CoreRarity: 0
+    CoreElement: 0
+    CoreEfficiency: 0
+    Head:
+      Name: 
+      Rarity: 0
+      ID: 
+      CardDescription: 
+      Efficiency: 0
+    Shoulder:
+      Name: 
+      Rarity: 0
+      ID: 
+      CardDescription: 
+      Efficiency: 0
+    Back:
+      Name: 
+      Rarity: 0
+      ID: 
+      CardDescription: 
+      Efficiency: 0
+    Gloves:
+      Name: 
+      Rarity: 0
+      ID: 
+      CardDescription: 
+      Efficiency: 0
