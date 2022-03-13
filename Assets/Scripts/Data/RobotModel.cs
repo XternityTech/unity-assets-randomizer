@@ -21,8 +21,33 @@ namespace Xternity
 
         public void SetBody(GameObject body)
         {
-            var bodyInstance = Instantiate(body, _body.transform.parent);
-            bodyInstance.transform.position = _body.transform.position;
+            CreatePart(body, _body);
+        }
+        
+        public void SetHead(GameObject head)
+        {
+            CreatePart(head, _head);
+        }
+        
+        public void SetShoulder(GameObject shoulder)
+        {
+            CreatePart(shoulder, _shoulder);
+        }
+        
+        public void Setback(GameObject back)
+        {
+            CreatePart(back, _back);
+        }
+        
+        public void SetGloves(GameObject gloves)
+        {
+            CreatePart(gloves, _gloves);
+        }
+
+        private void CreatePart(GameObject prefab, GameObject placement)
+        {
+            var bodyInstance = Instantiate(prefab, placement.transform.parent);
+            bodyInstance.transform.position = placement.transform.position;
         }
     }
 }
