@@ -15,7 +15,7 @@ namespace Xternity
             var url = Path.Combine(part.ToString(), name);
             var fullUrl = Path.Combine(BaseUrl, url);
 
-            var gameObject = LoadFromStreamingAssetsAsync(url, name);
+            var gameObject = LoadFromStreamingAssets(url, name);
             if (gameObject != null)
             {
                 return gameObject;
@@ -24,10 +24,11 @@ namespace Xternity
             return await LoadFromS3Async(fullUrl, name);
         }
 
-        private static async Task<GameObject> LoadFromStreamingAssetsAsync(string fullUrl, string name)
+        private static GameObject LoadFromStreamingAssets(string fullUrl, string name)
         {
-            var assetBundle = await AssetBundle.LoadFromFileAsync(Path.Combine(Application.streamingAssetsPath, fullUrl));
-            
+            var assetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, fullUrl));
+
+            return LoadFromAssetBundle(assetBundle, name);
         }
 
         private static async Task<GameObject> LoadFromS3Async(string fullUrl, string name)
@@ -38,12 +39,16 @@ namespace Xternity
             if (request.result == UnityWebRequest.Result.Success)
             {
                 var assetBundle = DownloadHandlerAssetBundle.GetContent(request);
-                var gameObject = assetBundle.LoadAsset<GameObject>(name);
 
-                return gameObject;
+                return LoadFromAssetBundle(assetBundle, name);
             }
 
             return null;
+        }
+
+        private static GameObject LoadFromAssetBundle(AssetBundle assetBundle, string name)
+        {
+            return assetBundle.LoadAsset<GameObject>(name);
         }
     }
 }

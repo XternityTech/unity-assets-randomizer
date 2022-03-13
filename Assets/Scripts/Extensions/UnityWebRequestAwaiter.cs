@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using UnityEngine.Networking;
 
@@ -7,6 +6,8 @@ namespace Xternity.Extension
 {
     public class UnityWebRequestAwaiter : INotifyCompletion
     {
+        public bool IsCompleted => _asyncOp.isDone;
+
         private UnityWebRequestAsyncOperation _asyncOp;
         private Action _continuation;
         
@@ -15,16 +16,19 @@ namespace Xternity.Extension
             _asyncOp = asyncOp;
             asyncOp.completed += OnRequestCompleted;
         }
-        
-        public bool IsCompleted => _asyncOp.isDone;
-        public void GetResult() { }
+
         public void OnCompleted(Action continuation)
         {
-            this._continuation = continuation;
+            _continuation = continuation;
         }
-        private void OnRequestCompleted(AsyncOperation obj)
+        
+        public void GetResult()
         {
-            _continuation();
+        }
+        
+        private void OnRequestCompleted(UnityEngine.AsyncOperation obj)
+        {
+            _continuation?.Invoke();
         }
     }
     public static class ExtensionMethods
