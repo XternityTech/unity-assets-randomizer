@@ -26,6 +26,8 @@ namespace Xternity
 
         private static GameObject LoadFromStreamingAssets(string fullUrl, string name)
         {
+            Debug.LogError(Path.Combine(Application.streamingAssetsPath, fullUrl));
+            
             var assetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, fullUrl));
 
             return LoadFromAssetBundle(assetBundle, name);

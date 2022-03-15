@@ -21,21 +21,69 @@ namespace Xternity
         public int RoboId;
 
         
+        //[JsonConverter(typeof(StringEnumConverter))]
+        
         //Parts
-        public Part Core;
+        public string Head;
         
-        public Part Head;
+        public string Back;
         
-        public Part Back;
+        public string Shoulders;
         
-        public Part Shoulder;
+        public string Hands;
 
-        public Part Hands;
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Element CoreElement;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Element HeadElement;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Element BackElement;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Element ShouldersElement;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Element HandsElement;
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Rarity CoreRarity;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Rarity HeadRarity;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Rarity BackRarity;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Rarity ShouldersRarity;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Rarity HandsRarity;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Rarity BodyRarity;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public uint CoreEfficiency;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public uint HeadEfficiency;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public uint BackEfficiency;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public uint ShouldersEfficiency;
+        
+        [JsonConverter(typeof(StringEnumConverter))]
+        public uint HandsEfficiency;
 
         //Stats
 
-        public double HP;
-        public double DMG;
+        public uint HP;
+        public uint DMG;
         public float AttackSpeed;
         public double SpecialAbilityChange;
     }
