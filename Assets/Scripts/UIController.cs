@@ -1,3 +1,4 @@
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
@@ -5,21 +6,35 @@ namespace Xternity
 {
     public class UIController : MonoBehaviour
     {
-        public async void LoadBody()
+        public Camera Camera;
+
+        public int Wight = 1080;
+        public int Height = 1920;
+        
+        public void TakeScreenshot()
         {
-            var gameObject = await AssetBundlesLoader.LoadAssetBundlesAsync(RobotPart.Body, "testbody");
-            Debug.LogError(gameObject);
+            StartCoroutine(TakeScreenshotIenumerator());
+        }
 
-            Instantiate(gameObject, transform.parent);
-
-            var camera = Camera.main;
+        public IEnumerator TakeScreenshotIenumerator()
+        {
+            yield return new WaitForEndOfFrame();
             
-            Texture2D image = new Texture2D(camera.targetTexture.width, camera.targetTexture.height);
-            image.ReadPixels(new Rect(0, 0, camera.targetTexture.width, camera.targetTexture.height), 0, 0);
+            RenderTexture activeRenderTexture = RenderTexture.active;
+            RenderTexture.active = Camera.targetTexture;
+ 
+            Camera.Render();
+            
+            Texture2D image = new Texture2D(Camera.targetTexture.width, Camera.targetTexture.height);
+            image.ReadPixels(new Rect(0, 0, Camera.targetTexture.width, Camera.targetTexture.height), 0, 0);
             image.Apply();
 
             var bytes = image.EncodeToPNG();
-            File.WriteAllBytes(Path.Combine(Application.streamingAssetsPath, "test.png"), bytes);
+            File.WriteAllBytes(Path.Combine(Application.dataPath, "Images", "test.png"), bytes);
+            
+            RenderTexture.active = activeRenderTexture;
+            
+            Debug.Log("Save screenshot");
         }
     }
 }

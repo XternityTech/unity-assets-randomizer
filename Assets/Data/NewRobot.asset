@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64a0d5ab691f4c5a86739f6875bfa8df, type: 3}
-  m_Name: New Robot Scriptable Object
+  m_Name: NewRobot
   m_EditorClassIdentifier: 
   Robot:
     BaseType: 0
     Name: 
     Nickname: 
-    Class: 0
+    Class: 2
     RoboId: 0
     Head: 
     Back: 
     Shoulders: 
     Hands: 
-    CoreElement: 0
+    CoreElement: 2
     HeadElement: 0
     BackElement: 0
-    ShouldersElement: 0
-    HandsElement: 0
+    ShouldersElement: 1
+    HandsElement: 1
     CoreRarity: 0
-    HeadRarity: 0
-    BackRarity: 0
+    HeadRarity: 1
+    BackRarity: 1
     ShouldersRarity: 0
     HandsRarity: 0
     BodyRarity: 0
-    CoreEfficiency: 0
-    HeadEfficiency: 0
-    BackEfficiency: 0
-    ShouldersEfficiency: 0
-    HandsEfficiency: 0
-    HP: 0
-    DMG: 0
+    CoreEfficiency: 41
+    HeadEfficiency: 35
+    BackEfficiency: 57
+    ShouldersEfficiency: 85
+    HandsEfficiency: 23
+    HP: 22
+    DMG: 5
     AttackSpeed: 0
     SpecialAbilityChange: 0
