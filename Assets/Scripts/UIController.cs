@@ -20,7 +20,10 @@ namespace Xternity
 
         public void ParseXml()
         {
-            
+            string excelPath = Application.dataPath + "/Robo NFT Json.xlsx";
+
+
+            CSVReader.ParseFile(excelPath);
         }
     }
 }
