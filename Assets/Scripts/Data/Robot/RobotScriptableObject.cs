@@ -49,7 +49,15 @@ namespace Xternity
         {
             var robot = new Robot();
             robot.BaseType = EnumExtensions.GetRandom<BaseType>();
+            robot.Name = EnumExtensions.GetRandom<Name>();
+            robot.Nickname = RobotData.GetRandomNickName();
             robot.Class = EnumExtensions.GetRandom<BaseClass>();
+            robot.RoboId = GetRandomId();
+
+            robot.Head = RobotData.GetRandomHead();
+            robot.Back = RobotData.GetRandomBack();
+            robot.Shoulders = RobotData.GetRandomShoulders();
+            robot.Hands = RobotData.GetRandomHands();
 
             robot.CoreElement = EnumExtensions.GetRandom<Element>();
             robot.HeadElement = EnumExtensions.GetRandom<Element>();
@@ -64,16 +72,23 @@ namespace Xternity
             robot.HandsRarity = EnumExtensions.GetRandom<Rarity>();
             robot.BodyRarity = EnumExtensions.GetRandom<Rarity>();
 
-            robot.CoreEfficiency = (uint)Random.Range(1, 101);
-            robot.HeadEfficiency = (uint)Random.Range(1, 101);
-            robot.BackEfficiency = (uint)Random.Range(1, 101);
-            robot.ShouldersEfficiency = (uint)Random.Range(1, 101);
-            robot.HandsEfficiency = (uint)Random.Range(1, 101);
+            robot.CoreEfficiency = RobotData.GetRandomCoreEfficiency();
+            robot.HeadEfficiency = RobotData.GetRandomHeadEfficiency();
+            robot.BackEfficiency = RobotData.GetRandomBackEfficiency();
+            robot.ShouldersEfficiency = RobotData.GetRandomShouldersEfficiency();
+            robot.HandsEfficiency = RobotData.GetRandomHandsEfficiency();
 
-            robot.HP = (uint)Random.Range(15, 26);
-            robot.DMG = (uint)Random.Range(1, 6);
+            robot.HP = RobotData.GetRandomHP();
+            robot.DMG = RobotData.GetRandomDamage();
+            robot.AttackSpeed = RobotData.GetRandomAttackSpeeds();
+            robot.SpecialAbilityChange = RobotData.GetSpecialAbilityCharge();
 
             Robot = robot;
+        }
+
+        private int GetRandomId()
+        {
+            throw new System.NotImplementedException();
         }
 #endif
     }

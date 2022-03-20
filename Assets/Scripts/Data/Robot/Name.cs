@@ -3,8 +3,8 @@ using System;
 namespace Xternity
 {
     [Serializable]
-    public enum BaseClass
+    public enum Name
     {
-        Tank
+        Jawbreaker
     }
 }

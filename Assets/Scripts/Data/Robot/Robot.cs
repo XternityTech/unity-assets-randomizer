@@ -11,7 +11,8 @@ namespace Xternity
         [JsonConverter(typeof(StringEnumConverter))]
         public BaseType BaseType;
 
-        public string Name;
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Name Name;
 
         public string Nickname;
         
@@ -20,7 +21,6 @@ namespace Xternity
 
         public int RoboId;
 
-        
         //[JsonConverter(typeof(StringEnumConverter))]
         
         //Parts
@@ -31,6 +31,7 @@ namespace Xternity
         public string Shoulders;
         
         public string Hands;
+        
 
         [JsonConverter(typeof(StringEnumConverter))]
         public Element CoreElement;
@@ -84,7 +85,7 @@ namespace Xternity
 
         public uint HP;
         public uint DMG;
-        public float AttackSpeed;
-        public double SpecialAbilityChange;
+        public double AttackSpeed;
+        public uint SpecialAbilityChange;
     }
 }

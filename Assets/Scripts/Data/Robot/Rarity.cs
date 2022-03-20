@@ -5,7 +5,6 @@ namespace Xternity
     [Serializable]
     public enum Rarity
     {
-        Common,
-        Mythical
+        Common
     }
 }
