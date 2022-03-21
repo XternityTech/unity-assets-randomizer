@@ -10,35 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64a0d5ab691f4c5a86739f6875bfa8df, type: 3}
-  m_Name: NewRobot
+  m_Name: 
   m_EditorClassIdentifier: 
   Robot:
-    BaseType: 0
-    Name: 
-    Nickname: 
-    Class: 2
-    RoboId: 0
-    Head: 
-    Back: 
-    Shoulders: 
-    Hands: 
-    CoreElement: 2
-    HeadElement: 0
-    BackElement: 0
+    Type: 0
+    Name: 0
+    Nickname: Emogene
+    Class: 0
+    RoboId: 1
+    Head: Common Power Gear
+    Back: Common Primal Gear
+    Shoulders: Common Kinetic Gear
+    Hands: Common Force Gear
+    CoreElement: 1
+    HeadElement: 1
+    BackElement: 2
     ShouldersElement: 1
-    HandsElement: 1
+    HandsElement: 0
     CoreRarity: 0
-    HeadRarity: 1
-    BackRarity: 1
+    HeadRarity: 0
+    BackRarity: 0
     ShouldersRarity: 0
     HandsRarity: 0
     BodyRarity: 0
-    CoreEfficiency: 41
-    HeadEfficiency: 35
-    BackEfficiency: 57
-    ShouldersEfficiency: 85
-    HandsEfficiency: 23
-    HP: 22
-    DMG: 5
-    AttackSpeed: 0
-    SpecialAbilityChange: 0
+    CoreEfficiency: 7
+    HeadEfficiency: 5
+    BackEfficiency: 12
+    ShouldersEfficiency: 1
+    HandsEfficiency: 36
+    HP: 16
+    DMG: 4
+    AttackSpeed: 0.6
+    SpecialAbilityChange: 8

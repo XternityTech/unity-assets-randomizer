@@ -7,7 +7,7 @@ namespace Xternity
     public enum Element
     {
         Fire,
-        Ice,
-        Electric
+        ICE,
+        ELECTRIC
     }
 }

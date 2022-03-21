@@ -11,6 +11,41 @@ namespace Xternity
         public Robot Robot;
         
 #if UNITY_EDITOR
+
+        [UnityEditor.MenuItem("Xternity/SaveFirst1000ToFile")]
+        public static void SaveFirst1000ToFile()
+        {
+            var path = UnityEditor.EditorUtility.SaveFilePanel(
+                "Save to JSON",
+                "",
+                "",
+                "");
+
+            if (Directory.Exists(path))
+            {
+               Directory.Delete(path); 
+            }
+            else
+            {
+                Directory.CreateDirectory(path);
+            }
+            
+            for (var i = 0; i < 1; i++)
+            {
+                var robotScriptableObject = CreateInstance<RobotScriptableObject>();
+                robotScriptableObject.GenerateRandom();
+
+                if (path.Length != 0)
+                {
+                    var json = JsonConvert.SerializeObject(robotScriptableObject.Robot, Formatting.Indented);
+
+                    path = Path.Combine(path, robotScriptableObject.Robot.Name + ".json");
+                    
+                    File.WriteAllText(path, json);
+                }
+            }
+        }
+        
         [ContextMenu("Save to file")]
         private void SaveToFile()
         {
@@ -48,10 +83,10 @@ namespace Xternity
         private void GenerateRandom()
         {
             var robot = new Robot();
-            robot.BaseType = EnumExtensions.GetRandom<BaseType>();
+            robot.Type = EnumExtensions.GetRandom<Type>();
             robot.Name = EnumExtensions.GetRandom<Name>();
             robot.Nickname = RobotData.GetRandomNickName();
-            robot.Class = EnumExtensions.GetRandom<BaseClass>();
+            robot.Class = EnumExtensions.GetRandom<Class>();
             robot.RoboId = GetRandomId();
 
             robot.Head = RobotData.GetRandomHead();
@@ -88,6 +123,7 @@ namespace Xternity
 
         private int GetRandomId()
         {
+            return 1;
             throw new System.NotImplementedException();
         }
 #endif

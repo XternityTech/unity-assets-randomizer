@@ -9,7 +9,7 @@ namespace Xternity
     {
         //General
         [JsonConverter(typeof(StringEnumConverter))]
-        public BaseType BaseType;
+        public Type Type;
 
         [JsonConverter(typeof(StringEnumConverter))]
         public Name Name;
@@ -17,12 +17,10 @@ namespace Xternity
         public string Nickname;
         
         [JsonConverter(typeof(StringEnumConverter))]
-        public BaseClass Class;
+        public Class Class;
 
         public int RoboId;
 
-        //[JsonConverter(typeof(StringEnumConverter))]
-        
         //Parts
         public string Head;
         
@@ -66,19 +64,14 @@ namespace Xternity
         [JsonConverter(typeof(StringEnumConverter))]
         public Rarity BodyRarity;
         
-        [JsonConverter(typeof(StringEnumConverter))]
         public uint CoreEfficiency;
         
-        [JsonConverter(typeof(StringEnumConverter))]
         public uint HeadEfficiency;
-        
-        [JsonConverter(typeof(StringEnumConverter))]
+
         public uint BackEfficiency;
-        
-        [JsonConverter(typeof(StringEnumConverter))]
+
         public uint ShouldersEfficiency;
-        
-        [JsonConverter(typeof(StringEnumConverter))]
+
         public uint HandsEfficiency;
 
         //Stats
