@@ -15,6 +15,8 @@ namespace Xternity
         [UnityEditor.MenuItem("Xternity/SaveFirst1000ToFile")]
         public static void SaveFirst1000ToFile()
         {
+            const string FileNamePattern = "robo#{0}.json";
+            
             var path = UnityEditor.EditorUtility.SaveFilePanel(
                 "Save to JSON",
                 "",
@@ -40,7 +42,7 @@ namespace Xternity
                 
                 var json = JsonConvert.SerializeObject(robot, Formatting.Indented);
 
-                var robotPath = Path.Combine(path, $"{robot.Nickname}_{robot.RoboId}.json");
+                var robotPath = Path.Combine(path, string.Format(FileNamePattern, robot.RoboId));
                 
                 File.WriteAllText(robotPath, json);
             }
@@ -107,16 +109,16 @@ namespace Xternity
             robot.HandsRarity = EnumExtensions.GetRandom<Rarity>();
             robot.BodyRarity = EnumExtensions.GetRandom<Rarity>();
 
-            robot.CoreEfficiency = RobotData.GetRandomCoreEfficiency();
-            robot.HeadEfficiency = RobotData.GetRandomHeadEfficiency();
-            robot.BackEfficiency = RobotData.GetRandomBackEfficiency();
-            robot.ShouldersEfficiency = RobotData.GetRandomShouldersEfficiency();
-            robot.HandsEfficiency = RobotData.GetRandomHandsEfficiency();
+            robot.CoreEfficiency = RobotData.GetRandomCoreEfficiency().ToString();
+            robot.HeadEfficiency = RobotData.GetRandomHeadEfficiency().ToString();
+            robot.BackEfficiency = RobotData.GetRandomBackEfficiency().ToString();
+            robot.ShouldersEfficiency = RobotData.GetRandomShouldersEfficiency().ToString();
+            robot.HandsEfficiency = RobotData.GetRandomHandsEfficiency().ToString();
 
-            robot.HP = RobotData.GetRandomHP();
-            robot.DMG = RobotData.GetRandomDamage();
-            robot.AttackSpeed = RobotData.GetRandomAttackSpeeds();
-            robot.SpecialAbilityChange = RobotData.GetSpecialAbilityCharge();
+            robot.HP = RobotData.GetRandomHP().ToString();
+            robot.DMG = RobotData.GetRandomDamage().ToString();
+            robot.AttackSpeed = RobotData.GetRandomAttackSpeeds().ToString();
+            robot.SpecialAbilityChange = RobotData.GetSpecialAbilityCharge().ToString();
 
             Robot = robot;
         }

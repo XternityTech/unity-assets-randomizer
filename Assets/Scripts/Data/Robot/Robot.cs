@@ -64,21 +64,21 @@ namespace Xternity
         [JsonConverter(typeof(StringEnumConverter))]
         public Rarity BodyRarity;
         
-        public uint CoreEfficiency;
+        public string CoreEfficiency;
         
-        public uint HeadEfficiency;
+        public string HeadEfficiency;
 
-        public uint BackEfficiency;
+        public string BackEfficiency;
 
-        public uint ShouldersEfficiency;
+        public string ShouldersEfficiency;
 
-        public uint HandsEfficiency;
+        public string HandsEfficiency;
 
         //Stats
 
-        public uint HP;
-        public uint DMG;
-        public double AttackSpeed;
-        public uint SpecialAbilityChange;
+        public string HP;
+        public string DMG;
+        public string AttackSpeed;
+        public string SpecialAbilityChange;
     }
 }
