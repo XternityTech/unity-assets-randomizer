@@ -19,7 +19,7 @@ namespace Xternity
         [JsonConverter(typeof(StringEnumConverter))]
         public Class Class;
 
-        public int RoboId;
+        public string RoboId;
 
         //Parts
         public string Head;

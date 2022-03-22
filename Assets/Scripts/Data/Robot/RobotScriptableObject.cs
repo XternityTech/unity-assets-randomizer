@@ -30,19 +30,19 @@ namespace Xternity
                 Directory.CreateDirectory(path);
             }
             
-            for (var i = 0; i < 1; i++)
+            for (var index = 0; index < 1000; index++)
             {
                 var robotScriptableObject = CreateInstance<RobotScriptableObject>();
                 robotScriptableObject.GenerateRandom();
+                
+                var robot = robotScriptableObject.Robot;
+                robot.RoboId = (1000 + index).ToString();
+                
+                var json = JsonConvert.SerializeObject(robot, Formatting.Indented);
 
-                if (path.Length != 0)
-                {
-                    var json = JsonConvert.SerializeObject(robotScriptableObject.Robot, Formatting.Indented);
-
-                    path = Path.Combine(path, robotScriptableObject.Robot.Name + ".json");
-                    
-                    File.WriteAllText(path, json);
-                }
+                var robotPath = Path.Combine(path, $"{robot.Nickname}_{robot.RoboId}.json");
+                
+                File.WriteAllText(robotPath, json);
             }
         }
         
@@ -87,7 +87,7 @@ namespace Xternity
             robot.Name = EnumExtensions.GetRandom<Name>();
             robot.Nickname = RobotData.GetRandomNickName();
             robot.Class = EnumExtensions.GetRandom<Class>();
-            robot.RoboId = GetRandomId();
+            robot.RoboId = 1.ToString();
 
             robot.Head = RobotData.GetRandomHead();
             robot.Back = RobotData.GetRandomBack();
@@ -119,12 +119,6 @@ namespace Xternity
             robot.SpecialAbilityChange = RobotData.GetSpecialAbilityCharge();
 
             Robot = robot;
-        }
-
-        private int GetRandomId()
-        {
-            return 1;
-            throw new System.NotImplementedException();
         }
 #endif
     }
