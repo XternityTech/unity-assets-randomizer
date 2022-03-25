@@ -11,26 +11,26 @@ namespace Xternity
         
         private static readonly string[] Heads =
         {
-            "Common Power Gear",
-            "Common Brave Gear"
+            "CommonPowerGear",
+            "CommonBraveGear"
         };
 
         private static readonly string[] Backs =
         {
-            "Common Primal Gear",
-            "Common Fearless Gear"
+            "CommonPrimalGear",
+            "CommonFearlessGear"
         };
 
         private static readonly string[] Shoulders =
         {
-            "Common Kinetic Gear",
-            "Common Bold Gear"
+            "CommonKineticGear",
+            "CommonBoldGear"
         };
 
         private static readonly string[] Hands =
         {
-            "Common Mega Gear",
-            "Common Force Gear"
+            "CommonMegaGear",
+            "CommonForceGear"
         };
 
         private static readonly double[] AttackSpeeds =

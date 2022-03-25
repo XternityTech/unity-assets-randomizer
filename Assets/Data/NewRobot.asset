@@ -15,17 +15,17 @@ MonoBehaviour:
   Robot:
     Type: 0
     Name: 0
-    Nickname: Emogene
+    Nickname: Gregg
     Class: 0
     RoboId: 1
-    Head: Common Power Gear
-    Back: Common Primal Gear
-    Shoulders: Common Kinetic Gear
-    Hands: Common Force Gear
+    Head: Common Brave Gear
+    Back: Common Fearless Gear
+    Shoulders: Common Bold Gear
+    Hands: Common Mega Gear
     CoreElement: 1
-    HeadElement: 1
-    BackElement: 2
-    ShouldersElement: 1
+    HeadElement: 2
+    BackElement: 0
+    ShouldersElement: 2
     HandsElement: 0
     CoreRarity: 0
     HeadRarity: 0
@@ -33,12 +33,12 @@ MonoBehaviour:
     ShouldersRarity: 0
     HandsRarity: 0
     BodyRarity: 0
-    CoreEfficiency: 7
-    HeadEfficiency: 5
-    BackEfficiency: 12
-    ShouldersEfficiency: 1
-    HandsEfficiency: 36
-    HP: 16
+    CoreEfficiency: 36
+    HeadEfficiency: 89
+    BackEfficiency: 86
+    ShouldersEfficiency: 13
+    HandsEfficiency: 37
+    HP: 15
     DMG: 4
     AttackSpeed: 0.6
     SpecialAbilityChange: 8

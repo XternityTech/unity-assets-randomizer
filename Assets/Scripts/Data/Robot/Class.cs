@@ -5,6 +5,6 @@ namespace Xternity
     [Serializable]
     public enum Class
     {
-        TANK
+        Tank
     }
 }
